@@ -10,6 +10,7 @@ import { Input } from '@/components/ui/input';
 import { useAuth } from '@/contexts/AuthContext';
 import { cn } from '@/lib/utils';
 import { toast } from 'sonner';
+import logo from '@/assets/logo.png';
 
 interface Message {
   id: string;
@@ -124,7 +125,7 @@ const Chat = () => {
     const responses: Record<string, string> = {
       general: `नमस्ते! I'd be happy to help you with "${query}". 
 
-As Saarthi AI, I'm designed to understand and respond in multiple Indian languages. Here's what I can tell you:
+As Vyuha AI, I'm designed to understand and respond in multiple Indian languages. Here's what I can tell you:
 
 This is a demo response showcasing our multilingual capabilities. In the full version, I can:
 - Explain complex topics in simple terms
@@ -139,7 +140,7 @@ Is there anything specific you'd like to know more about?`,
 # Example Python code
 def hello_india():
     print("नमस्ते India! 🇮🇳")
-    return "Welcome to Saarthi AI"
+    return "Welcome to Vyuha AI"
 
 # Run the function
 hello_india()
@@ -148,12 +149,12 @@ hello_india()
 I can help you with various programming languages and explain concepts in Hindi, Telugu, or English!`,
       hindi: `नमस्ते! आपने पूछा: "${query}"
 
-मैं Saarthi AI हूं और मैं हिंदी में आपकी मदद कर सकता हूं। यह एक डेमो रिस्पॉन्स है जो दिखाता है कि मैं कैसे हिंदी में बातचीत कर सकता हूं।
+मैं Vyuha AI हूं और मैं हिंदी में आपकी मदद कर सकता हूं। यह एक डेमो रिस्पॉन्स है जो दिखाता है कि मैं कैसे हिंदी में बातचीत कर सकता हूं।
 
 क्या मैं आपकी कुछ और मदद कर सकता हूं?`,
       telugu: `నమస్కారం! మీరు అడిగారు: "${query}"
 
-నేను Saarthi AI ని మరియు నేను తెలుగులో మీకు సహాయం చేయగలను. ఇది మా బహుభాషా సామర్థ్యాలను ప్రదర్శించే డెమో ప్రతిస్పందన.
+నేను Vyuha AI ని మరియు నేను తెలుగులో మీకు సహాయం చేయగలను. ఇది మా బహుభాషా సామర్థ్యాలను ప్రదర్శించే డెమో ప్రతిస్పందన.
 
 నేను మీకు మరేదైనా సహాయం చేయగలనా?`,
       study: `Great question about "${query}"! 📚
@@ -283,20 +284,21 @@ Need help in Hindi or Telugu? Just ask!`,
 
       {/* Main Chat Area */}
       <main className="flex-1 flex flex-col min-w-0">
-        {/* Header */}
+        {/* Header with Credits */}
         <header className="h-14 border-b border-border flex items-center justify-between px-4">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">स</span>
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary-light flex items-center justify-center overflow-hidden">
+              <img src={logo} alt="Vyuha AI" className="w-6 h-6 object-contain" />
             </div>
-            <span className="font-semibold">Saarthi AI</span>
-            <span className="text-xs px-2 py-0.5 rounded-full bg-secondary/10 text-secondary font-medium">
+            <span className="font-semibold">Vyuha AI</span>
+            <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary font-medium">
               {modes.find(m => m.id === selectedMode)?.label}
             </span>
           </div>
+          {/* Credits display only in chat page */}
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-accent">
             <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium">{user?.credits || 100} credits</span>
+            <span className="text-sm font-medium">{user?.credits || 0} credits</span>
           </div>
         </header>
 
@@ -309,10 +311,10 @@ Need help in Hindi or Telugu? Just ask!`,
                 animate={{ opacity: 1, y: 0 }}
                 className="text-center max-w-2xl"
               >
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mx-auto mb-6 shadow-large">
-                  <span className="text-primary-foreground font-bold text-3xl">स</span>
+                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center mx-auto mb-6 shadow-large overflow-hidden">
+                  <img src={logo} alt="Vyuha AI" className="w-16 h-16 object-contain" />
                 </div>
-                <h2 className="text-2xl font-bold mb-2">Welcome to Saarthi AI</h2>
+                <h2 className="text-2xl font-bold mb-2">Welcome to Vyuha AI</h2>
                 <p className="text-muted-foreground mb-8">
                   India's multilingual AI assistant. Ask me anything in English, Hindi, Telugu, or more!
                 </p>
@@ -348,7 +350,7 @@ Need help in Hindi or Telugu? Just ask!`,
                   )}
                 >
                   {message.role === 'assistant' && (
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary-light flex items-center justify-center flex-shrink-0">
                       <Brain className="w-4 h-4 text-primary-foreground" />
                     </div>
                   )}
@@ -367,7 +369,7 @@ Need help in Hindi or Telugu? Just ask!`,
                         className="absolute top-2 right-2 p-1.5 rounded-lg bg-background/50 opacity-0 group-hover:opacity-100 transition-opacity"
                       >
                         {copiedId === message.id ? (
-                          <Check className="w-4 h-4 text-secondary" />
+                          <Check className="w-4 h-4 text-primary" />
                         ) : (
                           <Copy className="w-4 h-4 text-muted-foreground" />
                         )}
@@ -382,7 +384,7 @@ Need help in Hindi or Telugu? Just ask!`,
                   animate={{ opacity: 1 }}
                   className="flex gap-3"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary-light flex items-center justify-center">
                     <Brain className="w-4 h-4 text-primary-foreground" />
                   </div>
                   <div className="bg-accent border border-primary/20 rounded-2xl rounded-tl-sm p-4">
@@ -408,7 +410,7 @@ Need help in Hindi or Telugu? Just ask!`,
                 className={cn(
                   "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all",
                   webSearchEnabled
-                    ? "bg-secondary text-secondary-foreground"
+                    ? "bg-primary text-primary-foreground"
                     : "bg-muted text-muted-foreground hover:bg-accent"
                 )}
               >
@@ -419,7 +421,7 @@ Need help in Hindi or Telugu? Just ask!`,
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && handleSend()}
-                placeholder="Ask Saarthi anything..."
+                placeholder="Ask Vyuha anything..."
                 className="flex-1 border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
               />
               <Button
@@ -436,7 +438,7 @@ Need help in Hindi or Telugu? Just ask!`,
               </Button>
             </div>
             <p className="text-xs text-muted-foreground text-center mt-2">
-              Saarthi AI can make mistakes. Please verify important information.
+              Vyuha AI can make mistakes. Please verify important information.
             </p>
           </div>
         </div>

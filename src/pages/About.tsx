@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 const About = () => {
   const team = [
     { name: 'Founding Team', role: 'Building the future of Indian AI', icon: Users },
-    { name: 'Community Contributors', role: '10,000+ volunteers', icon: Heart },
+    { name: 'Community Contributors', role: 'Volunteers', icon: Heart },
     { name: 'Language Experts', role: 'Linguists & Native Speakers', icon: Globe },
   ];
 
@@ -35,20 +35,20 @@ const About = () => {
 
   const faqs = [
     {
-      question: 'What is Saarthi AI?',
-      answer: "Saarthi AI is India's first community-built multilingual AI assistant. It's designed to understand and respond in 22+ Indian languages, making AI accessible to all Indians.",
+      question: 'What is Vyuha AI?',
+      answer: "Vyuha AI is India's first community-built multilingual AI assistant. The name 'Vyuha' comes from Sanskrit, meaning a strategic formation or arrangement – just as the legendary Chakravyuha was an intricate military formation, Vyuha AI represents a sophisticated arrangement of language models working together to understand India's diverse linguistic landscape.",
     },
     {
       question: 'How can I contribute?',
-      answer: 'You can contribute by translating AI responses, adding tone tags, and providing feedback. Every contribution helps improve Saarthi for millions of users.',
+      answer: 'You can contribute by translating AI responses, adding tone tags, and providing feedback. Every contribution helps improve Vyuha for millions of users.',
     },
     {
       question: 'Which languages are supported?',
       answer: 'We support Hindi, Telugu, Tamil, Kannada, Malayalam, Marathi, Bengali, Gujarati, Punjabi, and many more. We\'re constantly adding new languages!',
     },
     {
-      question: 'Is Saarthi AI free to use?',
-      answer: 'Yes! Saarthi AI offers free credits to all users. Premium features are available for power users who need more.',
+      question: 'Is Vyuha AI free to use?',
+      answer: 'Yes! Vyuha AI offers free credits to all users. Premium features are available for power users who need more.',
     },
   ];
 
@@ -87,17 +87,18 @@ const About = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl font-bold mb-6">
-                Why <span className="text-primary">Saarthi</span>?
+                Why <span className="text-primary">Vyuha</span>?
               </h2>
               <p className="text-muted-foreground mb-6">
-                "Saarthi" means guide or companion in Hindi. Just as Saarthi helped Arjuna navigate 
-                the battlefield, we aim to guide India into the AI era – in every language, 
-                for every Indian.
+                "Vyuha" is a Sanskrit word meaning a strategic formation or arrangement. In ancient Indian epics, 
+                the Chakravyuha was a legendary military formation known for its complexity and impenetrability. 
+                Just as warriors needed to understand its intricate patterns to navigate through, Vyuha AI represents 
+                a sophisticated arrangement of AI models working in harmony to decode India's rich linguistic tapestry.
               </p>
               <p className="text-muted-foreground mb-6">
                 Most AI systems are trained primarily on English data, making them less effective 
                 for the 1.4 billion Indians who speak hundreds of different languages. We're 
-                changing that.
+                changing that – building AI that truly understands every Indian, in their own language.
               </p>
               <div className="flex items-center gap-4">
                 <Link to="/signup">
@@ -144,10 +145,10 @@ const About = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold mb-4">
-              Powered by <span className="text-secondary">Community</span>
+              Powered by <span className="text-primary">Community</span>
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Saarthi AI is built by a passionate team and thousands of community contributors 
+              Vyuha AI is built by a passionate team and community contributors 
               who believe in making AI accessible to all.
             </p>
           </motion.div>
@@ -162,7 +163,7 @@ const About = () => {
                 transition={{ delay: index * 0.1 }}
                 className="text-center p-6 rounded-2xl bg-card border border-border"
               >
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center mx-auto mb-4">
                   <member.icon className="w-8 h-8 text-primary-foreground" />
                 </div>
                 <h3 className="font-semibold mb-1">{member.name}</h3>
@@ -209,7 +210,7 @@ const About = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/10">
+      <section className="py-16 bg-gradient-to-br from-primary/5 via-primary-light/5 to-primary/10">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -221,7 +222,7 @@ const About = () => {
               Ready to Make History?
             </h2>
             <p className="text-muted-foreground mb-8">
-              Join thousands of contributors shaping the future of AI in India. 
+              Join contributors shaping the future of AI in India. 
               Your language, your contribution, your impact.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -233,7 +234,7 @@ const About = () => {
               </Link>
               <Link to="/chat">
                 <Button variant="outline" size="lg">
-                  Try Saarthi AI
+                  Try Vyuha AI
                 </Button>
               </Link>
             </div>
