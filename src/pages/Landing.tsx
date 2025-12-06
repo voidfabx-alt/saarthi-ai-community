@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import FeatureCard from '@/components/FeatureCard';
 import StepCard from '@/components/StepCard';
 import heroBg from '@/assets/hero-bg.jpg';
+import logo from '@/assets/logo.png';
 
 const Landing = () => {
   const features = [
@@ -29,7 +30,7 @@ const Landing = () => {
     {
       icon: Languages,
       title: 'Translate',
-      description: 'Help translate AI responses into your native language. Your expertise makes Saarthi understand India better.',
+      description: 'Help translate AI responses into your native language. Your expertise makes Vyuha understand India better.',
     },
     {
       icon: MessageSquare,
@@ -39,7 +40,7 @@ const Landing = () => {
     {
       icon: Sparkles,
       title: 'AI Learns',
-      description: 'Watch as Saarthi grows smarter with each contribution. Track your impact on the leaderboard.',
+      description: 'Watch as Vyuha grows smarter with each contribution. Track your impact on the leaderboard.',
     },
   ];
 
@@ -71,7 +72,7 @@ const Landing = () => {
               transition={{ delay: 0.2, duration: 0.5 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent border border-primary/20 mb-8"
             >
-              <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               <span className="text-sm font-medium text-accent-foreground">India's First Community-Built AI</span>
             </motion.div>
 
@@ -82,14 +83,14 @@ const Landing = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-              Experience Saarthi AI and give your valuable feedback to help us make 
+              Experience Vyuha AI and give your valuable feedback to help us make 
               India's most inclusive AI assistant even better.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link to="/chat">
                 <Button variant="hero" size="xl" className="group">
-                  Experience Saarthi AI
+                  Experience Vyuha AI
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
@@ -101,7 +102,7 @@ const Landing = () => {
               </Link>
             </div>
 
-            {/* Stats */}
+            {/* Stats - Empty */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -109,9 +110,9 @@ const Landing = () => {
               className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto"
             >
               {[
-                { value: '22+', label: 'Languages' },
-                { value: '10K+', label: 'Contributors' },
-                { value: '1M+', label: 'Translations' },
+                { value: '-', label: 'Languages' },
+                { value: '-', label: 'Contributors' },
+                { value: '-', label: 'Translations' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div className="text-3xl md:text-4xl font-bold text-primary">{stat.value}</div>
@@ -149,7 +150,7 @@ const Landing = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why <span className="text-primary">Saarthi AI</span>?
+              Why <span className="text-primary">Vyuha AI</span>?
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               We're building AI that truly understands India's linguistic diversity, 
@@ -182,7 +183,7 @@ const Landing = () => {
                 viewport={{ once: true }}
               >
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  How You Can <span className="text-secondary">Contribute</span>
+                  How You Can <span className="text-primary">Contribute</span>
                 </h2>
                 <p className="text-muted-foreground mb-8">
                   Every contribution, big or small, helps shape the future of AI in India. 
@@ -210,16 +211,16 @@ const Landing = () => {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/20 via-secondary/10 to-primary/5 p-8 flex items-center justify-center">
+              <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/20 via-primary-light/10 to-primary/5 p-8 flex items-center justify-center">
                 <div className="relative w-full h-full rounded-2xl bg-card shadow-large border border-border overflow-hidden">
                   {/* Mock Chat Interface */}
                   <div className="p-4 border-b border-border flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                      <span className="text-primary-foreground font-bold">स</span>
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center overflow-hidden">
+                      <img src={logo} alt="Vyuha AI" className="w-8 h-8 object-contain" />
                     </div>
                     <div>
-                      <div className="font-semibold text-foreground">Saarthi AI</div>
-                      <div className="text-xs text-secondary">Online</div>
+                      <div className="font-semibold text-foreground">Vyuha AI</div>
+                      <div className="text-xs text-primary">Online</div>
                     </div>
                   </div>
                   <div className="p-4 space-y-4">
@@ -228,7 +229,7 @@ const Landing = () => {
                         <Brain className="w-4 h-4 text-primary" />
                       </div>
                       <div className="bg-accent rounded-2xl rounded-tl-sm p-3 max-w-[80%]">
-                        <p className="text-sm">नमस्ते! मैं Saarthi हूं। आज मैं आपकी कैसे मदद कर सकता हूं?</p>
+                        <p className="text-sm">नमस्ते! मैं Vyuha हूं। आज मैं आपकी कैसे मदद कर सकता हूं?</p>
                       </div>
                     </div>
                     <div className="flex justify-end">
@@ -244,14 +245,14 @@ const Landing = () => {
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ repeat: Infinity, duration: 3 }}
-                className="absolute -top-4 -right-4 px-4 py-2 rounded-xl bg-secondary text-secondary-foreground text-sm font-medium shadow-medium"
+                className="absolute -top-4 -right-4 px-4 py-2 rounded-xl bg-primary text-primary-foreground text-sm font-medium shadow-medium"
               >
                 22+ Languages
               </motion.div>
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ repeat: Infinity, duration: 3, delay: 0.5 }}
-                className="absolute -bottom-4 -left-4 px-4 py-2 rounded-xl bg-primary text-primary-foreground text-sm font-medium shadow-medium"
+                className="absolute -bottom-4 -left-4 px-4 py-2 rounded-xl bg-primary-light text-primary-foreground text-sm font-medium shadow-medium"
               >
                 Made in India 🇮🇳
               </motion.div>
@@ -261,7 +262,7 @@ const Landing = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/10">
+      <section className="py-24 bg-gradient-to-br from-primary/5 via-primary-light/5 to-primary/10">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

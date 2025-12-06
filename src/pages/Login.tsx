@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useAuth } from '@/contexts/AuthContext';
 import { toast } from 'sonner';
+import logo from '@/assets/logo.png';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -44,11 +45,11 @@ const Login = () => {
         <div className="bg-card rounded-3xl shadow-large border border-border p-8">
           {/* Logo */}
           <div className="text-center mb-8">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mx-auto mb-4 shadow-medium">
-              <span className="text-primary-foreground font-bold text-2xl">स</span>
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center mx-auto mb-4 shadow-medium overflow-hidden">
+              <img src={logo} alt="Vyuha AI" className="w-12 h-12 object-contain" />
             </div>
             <h1 className="text-2xl font-bold text-foreground">Welcome Back</h1>
-            <p className="text-muted-foreground mt-2">Sign in to continue to Saarthi AI</p>
+            <p className="text-muted-foreground mt-2">Sign in to continue to Vyuha AI</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">

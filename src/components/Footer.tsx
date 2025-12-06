@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Github, Twitter, Linkedin, Heart } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,10 +12,10 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">स</span>
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center overflow-hidden">
+                <img src={logo} alt="Vyuha AI" className="w-8 h-8 object-contain" />
               </div>
-              <span className="font-bold text-xl">Saarthi<span className="text-primary">AI</span></span>
+              <span className="font-bold text-xl">Vyuha<span className="text-primary">AI</span></span>
             </Link>
             <p className="text-sm text-muted-foreground">
               Building India's first truly multilingual AI assistant, powered by our community.
@@ -79,7 +80,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Saarthi AI. Made with <Heart className="w-4 h-4 inline text-primary" /> in India
+            © {currentYear} Vyuha AI. Made with <Heart className="w-4 h-4 inline text-primary" /> in India
           </p>
           <div className="flex gap-6">
             <Link to="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">

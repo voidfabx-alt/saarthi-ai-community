@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useAuth } from '@/contexts/AuthContext';
 import { toast } from 'sonner';
+import logo from '@/assets/logo.png';
 
 const Signup = () => {
   const [email, setEmail] = useState('');
@@ -23,7 +24,7 @@ const Signup = () => {
 
     try {
       await signup(email, password, name, inviteCode);
-      toast.success('Welcome to Saarthi AI!');
+      toast.success('Welcome to Vyuha AI!');
       navigate('/chat');
     } catch (error: any) {
       toast.error(error.message || 'Signup failed. Please try again.');
@@ -43,8 +44,8 @@ const Signup = () => {
         <div className="bg-card rounded-3xl shadow-large border border-border p-8">
           {/* Logo */}
           <div className="text-center mb-8">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mx-auto mb-4 shadow-medium">
-              <span className="text-primary-foreground font-bold text-2xl">स</span>
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center mx-auto mb-4 shadow-medium overflow-hidden">
+              <img src={logo} alt="Vyuha AI" className="w-12 h-12 object-contain" />
             </div>
             <h1 className="text-2xl font-bold text-foreground">Join the Community</h1>
             <p className="text-muted-foreground mt-2">Create an account to start contributing</p>
@@ -146,7 +147,7 @@ const Signup = () => {
           className="mt-6 p-4 rounded-xl bg-accent border border-primary/20 text-center"
         >
           <p className="text-sm text-accent-foreground">
-            <strong>Demo:</strong> Use invite code <code className="px-2 py-0.5 rounded bg-primary/10 text-primary font-mono">SAARTHI2024</code>
+            <strong>Demo:</strong> Use invite code <code className="px-2 py-0.5 rounded bg-primary/10 text-primary font-mono">VYUHA2024</code>
           </p>
         </motion.div>
       </motion.div>

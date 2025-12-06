@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Languages, MessageSquare, Send, Loader2, CheckCircle, ArrowRight, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -92,12 +91,12 @@ const Contribute = () => {
             <span className="text-gradient">Contribute</span>
           </h1>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Help train Saarthi AI by providing translations and tone tags. Every contribution makes a difference!
+            Help train Vyuha AI by providing translations and tone tags. Every contribution makes a difference!
           </p>
         </motion.div>
 
         <div className="max-w-3xl mx-auto">
-          {/* Progress Stats */}
+          {/* Progress Stats - Empty */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -105,9 +104,9 @@ const Contribute = () => {
             className="grid grid-cols-3 gap-4 mb-8"
           >
             {[
-              { label: 'Your Contributions', value: '47' },
-              { label: 'Points Earned', value: '235' },
-              { label: 'Rank', value: '#128' },
+              { label: 'Your Contributions', value: '-' },
+              { label: 'Points Earned', value: '-' },
+              { label: 'Rank', value: '-' },
             ].map((stat) => (
               <div
                 key={stat.label}
@@ -132,8 +131,8 @@ const Contribute = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center py-12"
               >
-                <div className="w-20 h-20 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle className="w-10 h-10 text-secondary" />
+                <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="w-10 h-10 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Thank You!</h3>
                 <p className="text-muted-foreground">Your contribution has been submitted for review.</p>
